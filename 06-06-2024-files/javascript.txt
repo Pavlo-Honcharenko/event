@@ -1,0 +1,27 @@
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		const filterElement = document.querySelector('#head-table__wrapper');
+		
+		// Check if the element exists
+		if (filterElement) {
+			// Get the width of the filter element
+			const filterWidth = filterElement.offsetWidth + 110;
+			
+			// Find all elements with the class 'body-table__note'
+			const noteElements = document.querySelectorAll('.body-table__note');
+			
+			// Find all elements with the class 'body-table__update-message'
+			const updateMessageElements = document.querySelectorAll('.body-table__update-message');
+			
+			// Set the width of each 'body-table__note' element
+			noteElements.forEach(function(noteElement) {
+					noteElement.style.width = `${filterWidth}px`;
+			});
+
+			// Set the width of each 'body-table__update-message' element
+			updateMessageElements.forEach(function(updateMessageElement) {
+					updateMessageElement.style.width = `${filterWidth}px`;
+			});
+		}
+	});
+</script>

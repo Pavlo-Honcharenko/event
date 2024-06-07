@@ -1,0 +1,39 @@
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+
+		// Get all elements with the class 'head-table__col'
+		const elements = document.querySelectorAll('.head-table__col');
+
+		// Initialize variables to store the total width and the count of elements
+		let totalWidth = 0;
+		let elementCount = elements.length;
+
+		// Iterate through each element
+		elements.forEach(element => {
+			// Get the id of the element
+			const elementId = element.id;
+			// Get the width of the element
+			const elementWidth = element.offsetWidth;
+			// Add the width to the total width
+			totalWidth += elementWidth;
+		});
+		totalWidth = totalWidth - 5;
+
+		// Find all elements with the class 'body-table__note'
+		const noteElements = document.querySelectorAll('.body-table__note');
+		
+		// Find all elements with the class 'body-table__update-message'
+		const updateMessageElements = document.querySelectorAll('.body-table__update-message');
+		
+		// Set the width of each 'body-table__note' element
+		noteElements.forEach(function(noteElement) {
+				noteElement.style.width = `${totalWidth}px`;
+		});
+
+		// Set the width of each 'body-table__update-message' element
+		updateMessageElements.forEach(function(updateMessageElement) {
+				updateMessageElement.style.width = `${totalWidth}px`;
+		});
+	});
+
+</script>
